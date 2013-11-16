@@ -5,6 +5,7 @@ ProgressTracker
  - State machine
 
 
+/Gemfile
  gem 'rspec-rails', '~> 2.13'
   # The following optional lines are part of the advanced setup.
   gem 'guard-rspec', '2.5.0'
