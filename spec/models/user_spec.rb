@@ -3,8 +3,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(username: "Example User", email: "user@example.com",
-                     password: "foobar", password_confirmation: "foobar")
+    @user = User.new(username: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @user }
@@ -42,6 +41,23 @@ describe User do
     it { should_not be_valid }
   end
 
+  describe "when password is not present" do
+    before do
+      @user = User.new(username: "Example User", email: "user@example.com", password: " ", password_confirmation: " ")
+    end
+    it { should_not be_valid }
+  end
+
+  describe "when password doesn't match confirmation" do
+    before { @user.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+  end
+
+  describe "with a password that's too short" do
+    before { @user.password = @user.password_confirmation = "a" * 5 }
+    it { should be_invalid }
+  end
+
 	describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
@@ -62,41 +78,39 @@ describe User do
       end
     end
   end
+
+  describe "when username address is already taken" do
+    before do
+      user_with_same_username = @user.dup
+      user_with_same_username.username = @user.username.upcase
+      user_with_same_username.save
+    end
+
+    it { should_not be_valid }
+  end
+
+  describe "when email address is already taken" do
+    before do
+      user_with_same_email = @user.dup
+      user_with_same_email.username = "different user"
+      user_with_same_email.email = @user.email.upcase
+      user_with_same_email.save
+    end
+
+    it { should_not be_valid }
+  end
+
+  describe "when creating a second valid user" do
+  	before do
+  		second_user = User.new(username: "Second User", email: "second_user@example.com", password: "foobar", password_confirmation: "foobar")
+  		second_user.save
+  	end
+
+  	it { should be_valid}
+  end
 end
 
 #   it { should respond_to(:keys) }
-
-
-
-
-
-	# describe "when email address is already taken" do
- #    before do
- #      user_with_same_email = @user.dup
- #      user_with_same_email.email = @user.email.upcase
- #      user_with_same_email.save
- #    end
-
- #    it { should_not be_valid }
- #  end
-
-#   describe "when password is not present" do
-#     before do
-#       @user = User.new(name: "Example User", email: "user@example.com",
-#                        password: " ", password_confirmation: " ")
-#     end
-#     it { should_not be_valid }
-#   end
-
-#   describe "when password doesn't match confirmation" do
-#     before { @user.password_confirmation = "mismatch" }
-#     it { should_not be_valid }
-#   end
-
-#   describe "with a password that's too short" do
-#     before { @user.password = @user.password_confirmation = "a" * 5 }
-#     it { should be_invalid }
-#   end
 
 #   describe "return value of authenticate method" do
 #     before { @user.save }
