@@ -4,6 +4,7 @@ ProgressTracker
  - Foundation 5
  - State machine
 
+- this is the master remote
 
 /Gemfile
  gem 'rspec-rails', '~> 2.13'
