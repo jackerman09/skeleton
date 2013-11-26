@@ -45,10 +45,22 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
     config.include Capybara::DSL
+
+    def test_sign_in(user)
+      # helper method to sign in the (already confirmed!) passed-in user
+      visit new_user_session_path
+      fill_in 'Username', with: user.username
+      fill_in 'Password', with: 'foobar'
+      click_button 'Sign in'
+    end
   end
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
 
+end
+
+def logger
+  Rails.logger
 end
