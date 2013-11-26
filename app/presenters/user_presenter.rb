@@ -7,11 +7,11 @@ class UserPresenter < BasePresenter
 	end
 
 	def admin_text
-		if @user.admin?
-			'<dt>This is an admin</dt>'
-			h.link_to root_path
+		if user.admin?
+			'This is an admin'
+			# h.link_to root_path
 		else
-			'<dt>This is not an admin</dt>'
+			'This is not an admin'
 		end
 	end
 end
