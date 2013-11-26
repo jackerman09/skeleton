@@ -1,10 +1,8 @@
 WhatKeyV003::Application.routes.draw do
-  get "notes/index"
-  get "notes/show"
-  get "notes/new"
-  get "notes/edit"
+  resources :notes
   get "static_pages/home"
   devise_for :users
+  resources :users
 
   root 'static_pages#home'
 end

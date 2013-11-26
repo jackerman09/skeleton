@@ -1,0 +1,11 @@
+<% present @user do |user_presenter| %>
+	<div>
+		<dl>
+			<dt>Username:</dt>
+			<dt><%= @user.username %></dt>
+			<dt>Email:</dt>
+			<dt><%= @user.email %></dt>
+			
+		</dl>
+	</div>
+<% end %>
