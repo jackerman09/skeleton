@@ -3,9 +3,10 @@
 This Skeleton App includes the following:
 
 * Authentication with Devise using the following modules:
-	* :database_authenticatable
-	* :registerable
-	* :confirmable
+
+  * :database_authenticatable
+  * :registerable
+  * :confirmable
   * :recoverable
   * :rememberable
   * :trackable
