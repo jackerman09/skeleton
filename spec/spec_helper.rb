@@ -53,6 +53,8 @@ Spork.prefork do
       fill_in 'Password', with: 'foobar'
       click_button 'Sign in'
     end
+
+    config.include ActionView::TestCase::Behavior, example_group: {file_path: %r{spec/presenters}}
   end
 end
 
