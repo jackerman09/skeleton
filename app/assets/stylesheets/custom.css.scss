@@ -1,0 +1,49 @@
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+$grayMediumDark: #808080;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayMediumDark;
+  a {
+    color: $grayMediumDark;
+    &:hover { 
+      color: black;
+    }
+  }  
+  small { 
+    float: left;
+    margin-left: 10px;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+      &:last-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
