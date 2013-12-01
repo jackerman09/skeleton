@@ -1,0 +1,31 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to 'Skeleton App', root_path %></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="#">Right Nav Button Active</a></li>
+      <li class="has-dropdown">
+        <% if current_user.nil? %>
+          <li><%= link_to 'Sign up!', new_user_registration_path %></li>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+        <% else %>
+          <a href="#">User Profile</a>
+          <ul class="dropdown">
+            <li><%= link_to 'View profile', current_user %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+          </ul>
+        <% end %>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+  </section>
+</nav>
