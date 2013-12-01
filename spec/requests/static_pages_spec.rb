@@ -16,7 +16,7 @@ describe "StaticPages" do
   		test_sign_in(@user)
   	end
   	it { should have_content('Skeleton App') }
-  	it { should have_link('Edit profile') }
+  	it { should have_content('User Profile') }
   	it { should have_content('You cannot edit notes') }
   end
 
@@ -27,7 +27,7 @@ describe "StaticPages" do
   		test_sign_in(admin)
   	end
   	it { should have_content('Skeleton App') }
-  	it { should have_link('Edit profile') }
+  	it { should have_content('User Profile') }
   	it { should have_content('You can edit notes') }
   end
 end
