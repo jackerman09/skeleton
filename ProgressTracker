@@ -1,9 +1,10 @@
 ProgressTracker
  - default_url in environments/production needs host set to production host when available
  - State machine (on chords and keys)
- - presenters
 
  DONE
+ - Devise
  - postresql
  - Foundation 5
  - cancan
+ - presenters

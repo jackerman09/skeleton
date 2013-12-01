@@ -1,28 +1,20 @@
-== README
+== JACKERMAN09'S SKELETON
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Skeleton App includes the following:
 
-Things you may want to cover:
+* Authentication with Devise using the following modules:
+	* :database_authenticatable
+	* :registerable
+	* :confirmable
+  * :recoverable
+  * :rememberable
+  * :trackable
+  * :validatable - Use the Mailcatcher gem to catch confirmation emails generated on user creation
 
-* Ruby version
+* Authorization with CanCan
 
-* System dependencies
+* Presenters (from scratch based on Ryan Bates' RailsCast #287) with basic specs
 
-* Configuration
+* Postgres as the default database
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Foundation 5
