@@ -9,6 +9,16 @@ $grayMediumDark: #808080;
   box-sizing: border-box;
 }
 
+/* user pages */
+
+.user-field {
+  margin: 0px 20px 0px 20px;
+}
+
+.user-cancel-account {
+  margin: 0px 20px 0px 20px;
+}
+
 /* footer */
 
 footer {
@@ -46,4 +56,8 @@ footer {
   float: left;
   width: 100%;
   margin-top: 45px;
+}
+
+div.test, div.test * {
+  border: 1px solid black;
 }
