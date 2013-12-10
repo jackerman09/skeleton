@@ -1,18 +1,22 @@
-<h1>Skeleton App</h1>
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.username %></strong>.
-	</br>
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% if current_user.admin? %>
-  	<p>You're an admin!</p>
+<div class="row">
+  <h1>What Key Am I In?</h1>
+</div>
+<div class="row">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.username %></strong>.
+  	</br>
+    <%= link_to 'Edit profile', edit_user_registration_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% if current_user.admin? %>
+    	<p>You're an admin!</p>
+    <% end %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> |
+    <%= link_to "Login", new_user_session_path %>
   <% end %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-<% if can? :create, Note %>
-  You can edit notes.
-<% else %>
-	You cannot edit notes.
-<% end %>
+  <% if can? :create, Note %>
+    You can edit notes.
+  <% else %>
+  	You cannot edit notes.
+  <% end %>
+</div>
