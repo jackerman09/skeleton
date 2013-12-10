@@ -10,8 +10,10 @@
     <ul class="right">
       <li><a href="#">All Keys</a></li>
       <li><a href="#">All Chords</a></li>
+      <li class="divider"></li>
       <% if current_user && current_user.admin? %>
         <li><a href="#">All Notes</a></li>
+        <li class="divider"></li>
       <% end %>
       <li class="has-dropdown">
         <% if current_user.nil? %>
