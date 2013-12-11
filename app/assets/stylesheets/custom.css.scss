@@ -9,65 +9,11 @@ $grayMediumDark: #808080;
   box-sizing: border-box;
 }
 
-/* user pages */
+/* static pages */
 
-.user-field {
-  margin: 0px 20px 0px 20px;
-}
-
-.user-cancel-account {
-  margin: 0px 20px 0px 20px;
-}
-
-/* note pages */
-
-.note-header {
-  width: 94%;
-}
-
-// .note-table {
-//   width: 94%;
-//   .note-table-row {
-//     margin-top: 10px;
-//     margin-bottom: 10px;
-//     padding-bottom: 5px;
-//     // border-bottom: 1px solid $grayMediumLight;
-
-//     &:first-child {
-//       border-bottom: 1px solid red;
-//     }
-
-//     &:last-child {
-//       border-bottom: 1px solid black;
-//     }
-//   }
-// }
-
-.note-table {
-  width: 94%;
-
-  .note-table-row {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    &:hover {
-      background-color: $grayMediumLight;
-    }
-  }
-
-  > div > div.note-table-row {
-    border-bottom: 1px solid black;
-  }
-
-  a { 
-    color: black;
-    > div {
-      border-bottom: 1px solid $grayMediumLight;
-    }
-  }
-
-  a:last-child > div {
-    border-bottom: 1px solid black;
-  }
+.name {
+  // width: 175px;
+  border: 1px solid yellow;
 }
 
 /* footer */
@@ -97,6 +43,50 @@ footer {
         margin-right: 10px;
       }
     }
+  }
+}
+
+/* user pages */
+
+.user-field {
+  margin: 0px 20px 0px 20px;
+}
+
+.user-cancel-account {
+  margin: 0px 20px 0px 20px;
+}
+
+/* note pages */
+
+.note-header {
+  width: 94%;
+}
+
+.note-table {
+  width: 94%;
+
+  .note-table-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &:hover {
+      background-color: $grayMediumLight;
+    }
+  }
+
+  > div > div.note-table-row {
+    border-bottom: 1px solid black;
+  }
+
+  a { 
+    color: black;
+    > div {
+      border-bottom: 1px solid $grayMediumLight;
+    }
+  }
+
+  a:last-child > div {
+    border-bottom: 1px solid black;
   }
 }
 
