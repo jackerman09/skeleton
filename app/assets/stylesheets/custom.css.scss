@@ -11,11 +11,6 @@ $grayMediumDark: #808080;
 
 /* static pages */
 
-.name {
-  // width: 175px;
-  border: 1px solid yellow;
-}
-
 /* header */
 
 .toggle-topbar {
@@ -77,10 +72,10 @@ footer {
   .note-table-row {
     padding-top: 5px;
     padding-bottom: 5px;
+  }
 
-    &:hover {
-      background-color: $grayMediumLight;
-    }
+  a > div.note-table-row:hover  {
+    background-color: $grayMediumLight;
   }
 
   > div > div.note-table-row {
