@@ -1,4 +1,7 @@
 ProgressTracker
+ - remove hover from title row in notes index
+ - add drop-down menu to collapsed header nav
+
  - default_url in environments/production needs host set to production host when available
  - State machine (on chords and keys)
 
