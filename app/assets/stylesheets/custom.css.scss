@@ -3,6 +3,10 @@
 $grayMediumLight: #eaeaea;
 $grayMediumDark: #808080;
 
+$screen: "only screen" !default;
+$small-range: (0em, 40em); /* 0, 640px */
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -47,6 +51,12 @@ footer {
         margin-right: 10px;
       }
     }
+  }
+}
+
+@media #{$small-only} { 
+  footer ul li {
+    font-size: 5px;
   }
 }
 

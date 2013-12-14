@@ -1,17 +1,28 @@
-class StaticPagesPresenter < BasePresenter
-  # presents :static_pages
-  # delegate :username, to: :user
+class StaticPagesPresenter
 
-	def h
-		@template
-	end
+  def initialize(template)
+    @template = template
+    yield self if block_given?
+  end
 
-	def admin_text
-		if user.admin?
-			'This is an admin'
-			# h.link_to root_path
-		else
-			'This is not an admin'
+  def h
+    @template
+  end
+
+  def is_admin
+    if h.current_user && h.current_user.admin?
+      'You\'re an admin!'
+    else
+    	'You\'re not an admin'
+    end
+  end
+
+  def can_edit_notes
+		if h.can? :create, Note
+      'You can edit notes.'
+    else
+    	'You cannot edit notes.'
 		end
-	end
+  end
+
 end
